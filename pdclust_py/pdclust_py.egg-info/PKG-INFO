@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pdclust-py
+Version: 0.0.1
+Summary: Python reimplementation of the clustering approach used in "High-Resolution Single-Cell DNA Methylation Measurements Reveal Epigenetically Distinct Hematopoietic Stem Cell Subpopulations"
+Home-page: https://github.com/TeaBag-T/pdclust_py
+Author: Theodor F. Pöschl
+Keywords: pdclust clustering single-cell pairwise dissimilarity
