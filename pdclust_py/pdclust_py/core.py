@@ -83,7 +83,7 @@ def numba_pdclust(path_to_bed_files):
             result_df['number'].iloc[i] = x.split('_')[3]
     result_df = result_df.sort_values(by=['type', 'number'])
     result_df = result_df[result_df.index.to_list()]
-
+    result_df = result_df.fillna(0.0)
     return result_df
 
 
@@ -134,6 +134,7 @@ def trivial_pdclust(path_to_bed_files):
             result_df['number'].iloc[i] = x.split('_')[3]
     result_df = result_df.sort_values(by=['type', 'number'])
     result_df = result_df[result_df.index.to_list()]
-
+    result_df = result_df.fillna(0.0)
+    
     return result_df
 
