@@ -73,15 +73,6 @@ def numba_pdclust(path_to_bed_files):
     for elem in results:
         elem1, elem2, pairwise_dissimilarity = elem
         result_df.at[elem1, elem2] = pairwise_dissimilarity
-    result_df['number'] = None
-    result_df['type'] = None
-    result_df['type'] = [x.split('_')[0]for x in result_df.index.to_list()]
-    for i, x in enumerate(result_df.index.to_list()):
-        if len(x.split('_')) == 2:
-            result_df['number'].iloc[i] = '999'
-        else:
-            result_df['number'].iloc[i] = x.split('_')[3]
-    result_df = result_df.sort_values(by=['type', 'number'])
     result_df = result_df[result_df.index.to_list()]
     result_df = result_df.fillna(0.0)
     return result_df
@@ -124,15 +115,6 @@ def trivial_pdclust(path_to_bed_files):
     for elem in results:
         elem1, elem2, pairwise_dissimilarity = elem
         result_df.at[elem1, elem2] = pairwise_dissimilarity
-    result_df['number'] = None
-    result_df['type'] = None
-    result_df['type'] = [x.split('_')[0]for x in result_df.index.to_list()]
-    for i, x in enumerate(result_df.index.to_list()):
-        if len(x.split('_')) == 2:
-            result_df['number'].iloc[i] = '999'
-        else:
-            result_df['number'].iloc[i] = x.split('_')[3]
-    result_df = result_df.sort_values(by=['type', 'number'])
     result_df = result_df[result_df.index.to_list()]
     result_df = result_df.fillna(0.0)
     
