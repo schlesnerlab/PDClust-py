@@ -43,7 +43,8 @@ def numba_get_pairwise_dissimilarity(args):
     row_label, col_label = args
     df1 = pd.read_csv(row_label, sep='\t', usecols=(0, 1, 3), names=['chr', 'pos', 'frac_methyl'])
     df2 = pd.read_csv(col_label, sep='\t', usecols=(0, 1, 3), names=['chr', 'pos', 'frac_methyl'])
-    df1 = df1.astype({'pos': 'i8', 'frac_methyl': 'i4'})
+    df1 = df1.astype({'pos': np.int32, 'frac_methyl': np.int8})
+    df2 = df2.astype({'pos': np.int32, 'frac_methyl': np.int8})
     row_label, col_label = Path(row_label).stem, Path(col_label).stem
     for i in range(0, 20):
         tmp_df1 = df1[df1['chr'] == f'chr{i}'].copy(deep=True)
@@ -89,8 +90,8 @@ def get_pairwise_dissimilarity(tuple_of_bed_file_paths):
     :return: row_label = name of cell 1, col_label = name of cell 2, pairwise_dissimilarity
     """
     row_label, col_label = tuple_of_bed_file_paths
-    df1 = pd.read_csv(row_label, sep='\t', usecols=(0, 1, 3), names=['chr', 'pos', 'frac_methyl'])
-    df2 = pd.read_csv(col_label, sep='\t', usecols=(0, 1, 3), names=['chr', 'pos', 'frac_methyl'])
+    df1 = pd.read_csv(row_label, sep='\t', usecols=(0, 1, 3), names=['chr', 'pos', 'frac_methyl'], dtype={'chr': 'string', 'pos': np.int16, 'frac_methyl': np.int8})
+    df2 = pd.read_csv(col_label, sep='\t', usecols=(0, 1, 3), names=['chr', 'pos', 'frac_methyl'], dtype={'chr': 'string', 'pos': np.int16, 'frac_methyl': np.int8})
     row_label, col_label = Path(row_label).stem, Path(col_label).stem
     merged_df = pd.merge(df1, df2, on=['chr', 'pos'], suffixes=('_df1', '_df2'), how='inner')
     total_cpgs = merged_df.shape[0]
