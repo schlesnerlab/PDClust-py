@@ -39,4 +39,4 @@ plt.show()
 ```
 
 #### Credits
-@hui-tony-zk for the original implementation in R
+[@hui-tony-zk](https://github.com/hui-tony-zk) for the original implementation in R
