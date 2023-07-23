@@ -11,8 +11,7 @@ setup(
     install_requires=[
         'numpy',
         'pandas',
-        'seaborn',
-        'PyComplexHeatmap',
-        'dask',
+        'numba',
+        'tqdm'
     ],
 )
