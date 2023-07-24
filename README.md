@@ -1,8 +1,11 @@
 # PDClust-py
 This is a highly-performant Python implementation of PDclust for clustering single cells with highly sparse CpG coverage.
-The original paper introducing the algorithm can be found here: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6093082/. The original implementation in R was made available under https://github.com/hui-tony-zk/PDclust/tree/master.
+The original paper introducing the algorithm can be found here: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6093082/. The implementation in R was made available at https://github.com/hui-tony-zk/PDclust/tree/master.
 
 Further information for each indiviual method is included as a Docstring comment.
+
+This repository was created as part of a bachelor's thesis at the [Chair of Biomedical Informatics, Data Mining and Data Analytics](https://www.uni-augsburg.de/de/fakultaet/fai/informatik/prof/bioinf/mitarbeiter/matthias-schlesner/), led by Prof. Dr. Matthias Schlesner.
+
 
 --- 
 ## Quickstart
@@ -39,4 +42,5 @@ plt.show()
 ```
 
 #### Credits
-[@hui-tony-zk](https://github.com/hui-tony-zk) for the original implementation in R
+- [@stephenkraemer](https://github.com/stephenkraemer) for the (amazing) supervision
+- [@hui-tony-zk](https://github.com/hui-tony-zk) for the reference implementation in R
