@@ -41,6 +41,7 @@ plt.show()
 
 ```
 
+--- 
 #### Credits
 - [@stephenkraemer](https://github.com/stephenkraemer) for the (amazing) supervision
 - [@hui-tony-zk](https://github.com/hui-tony-zk) for the reference implementation in R
